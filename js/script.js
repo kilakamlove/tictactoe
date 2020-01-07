@@ -1,6 +1,8 @@
 var player1="O";
 var player2="X";
-
+var currentplayer="x";
+var numberofturns=0;
+var gameover=false;
 
 
 
@@ -43,3 +45,24 @@ $("#button9").click(function() {
     performLogic("#button9","#tile9");
 });
 
+function performLogic (button,tile) {
+    $(tile).text(currentplayer);
+    changeturn();
+    checkdraw();
+}
+function changeturn () {
+    numberofturns=numberofturns+1
+    if(currentplayer==="x")    {
+        currentplayer="O"
+    }
+    else{currentplayer="x"
+
+    }
+    console.log (numberofturns)
+    console.log (currentplayer)
+}
+function checkdraw () {
+    if(numberofturns=== 9)      {
+        alert ("It Is A Draw");
+    }
+}
